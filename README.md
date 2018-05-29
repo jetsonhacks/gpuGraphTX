@@ -25,4 +25,10 @@ or:
 
 $ python3 gpuGraph.py
 
+<h2>Release Notes</h2>
+
+Initial Release May, 2018
+* L4T 28.2 (JetPack 3.2)
+* Tested on Jetson TX2
+* Tested on Jetson TX1
 
