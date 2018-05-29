@@ -9,11 +9,11 @@ The graph is implemented as an animated Python Matplotlib graph. The app require
 
 For Python 2.7, Matplotlib may be installed as follows:
 
-sudo apt-get install python-matplotlib
+$ sudo apt-get install python-matplotlib
 
 For Python 3, Matplotlib may be installed as follows:
 
-sudo apt-get install python3-matplotlib
+$ sudo apt-get install python3-matplotlib
 
 You can run the app:
 
