@@ -17,7 +17,7 @@ gpuLoadFile="/sys/devices/gpu.0/load"
 fig = plt.figure(figsize=(6,2))
 plt.subplots_adjust(top=0.85, bottom=0.30)
 fig.set_facecolor('#F2F1F0')
-fig.canvas.set_window_title('GPU Activity Graph')
+fig.canvas.set_window_title('GPU Activity Monitor')
 
 # Subplot for the GPU activity
 gpuAx = plt.subplot2grid((1,1), (0,0), rowspan=2, colspan=1)
