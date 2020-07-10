@@ -2,11 +2,19 @@
 # MIT License
 # Copyright (c) 2018 Jetsonhacks
 import sys
+import subprocess
+import getpass
 import os
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from collections import deque
+
+remote = ''
+pwd = ''
+if len(sys.argv) > 1:
+    remote = sys.argv[1]
+    pwd = getpass.getpass(prompt=remote.split("@")[0]+' password: ', stream=None) 
 
 gpuLoadFile="/sys/devices/gpu.0/load"
 # On the Jetson TX1 this is a symbolic link to:
@@ -59,8 +67,12 @@ def updateGraph(frame):
  
     # Now draw the GPU usage
     gpuy_list.popleft()
-    with open(gpuLoadFile, 'r') as gpuFile:
-      fileData = gpuFile.read()
+    if len(remote) == 0:
+        with open(gpuLoadFile, 'r') as gpuFile:
+          fileData = gpuFile.read()
+    else:
+        cmd = "sshpass -p "+pwd+" ssh "+remote+" -t ./get_gpu_value.sh"
+        fileData = subprocess.check_output(cmd.split(" ")).decode("utf-8")
     # The GPU load is stored as a percentage * 10, e.g 256 = 25.6%
     gpuy_list.append(int(fileData)/10)
     gpuLine.set_data(gpux_list,gpuy_list)
