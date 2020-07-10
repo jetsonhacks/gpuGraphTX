@@ -7,31 +7,43 @@ The graph is implemented as an animated Python Matplotlib graph. The app require
 
 For Python 2.7, Matplotlib may be installed as follows:
 
+```shell
 $ sudo apt-get install python-matplotlib
+```
 
 For Python 3, Matplotlib may be installed as follows:
 
+```shell
 $ sudo apt-get install python3-matplotlib
+```
 
 You can run the app:
 
+```shell
 $ ./gpuGraph.py
+```
 
 or:
 
+```shell
 $ python gpuGraph.py
+```
 
 or:
 
+```shell
 $ python3 gpuGraph.py
+```
 
 ## Monitoring from host machine
 
 Provide ``user@ip`` as a command line argument when calling ``gpuGraph.py`` with the user and ip address of the Jetson board. A password of ``user`` will be prompted. It uses ssh to retrieve the GPU information from the Jetson board:
 
+```shell
 $ ./gpuGraph.py user@192.168.0.123
+```
 
-<h2>Release Notes</h2>
+## Release Notes
 
 Initial Release May, 2018
 * L4T 28.2 (JetPack 3.2)
