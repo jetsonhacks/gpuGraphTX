@@ -71,7 +71,7 @@ def updateGraph(frame):
         with open(gpuLoadFile, 'r') as gpuFile:
           fileData = gpuFile.read()
     else:
-        cmd = "sshpass -p "+pwd+" ssh "+remote+" -t ./get_gpu_value.sh"
+        cmd = "sshpass -p "+pwd+" ssh "+remote+" cat "+gpuLoadFile
         fileData = subprocess.check_output(cmd.split(" ")).decode("utf-8")
     # The GPU load is stored as a percentage * 10, e.g 256 = 25.6%
     gpuy_list.append(int(fileData)/10)

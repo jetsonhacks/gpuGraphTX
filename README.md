@@ -25,6 +25,12 @@ or:
 
 $ python3 gpuGraph.py
 
+## Monitoring from host machine
+
+Provide ``user@ip`` as a command line argument when calling ``gpuGraph.py`` with the user and ip address of the Jetson board. A password of ``user`` will be prompted. It uses ssh to retrieve the GPU information from the Jetson board:
+
+$ ./gpuGraph.py user@192.168.0.123
+
 <h2>Release Notes</h2>
 
 Initial Release May, 2018
